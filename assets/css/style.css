@@ -15,21 +15,22 @@ body {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 9999;
   background: transparent;
+  width: 100%;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 1rem 2rem;
+  width: 100%;
 }
 
 .nav-logo {
-  order: 1; /* Moves logo to the right */
+  order: 1;
+  margin-right: auto;
 }
 
 .nav-logo img {
@@ -38,7 +39,8 @@ body {
 }
 
 .nav-links {
-  order: 2; /* Moves links to the left */
+  order: 2;
+  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -233,10 +235,13 @@ body {
 
 /* Footer */
 .site-footer {
+  flex-shrink: 0;
   background: #333;
   color: #fff;
   text-align: center;
   padding: 1rem;
+  z-index: 1;
+  position: relative;
 }
 
 /* Ensure html and body take full height */
@@ -244,6 +249,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 /* Page container for sticky footer */
@@ -251,11 +257,13 @@ html, body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
+  z-index: 1;
 }
 
 /* Content wrapper that expands to fill available space */
 #content-wrap {
-  flex: 1;
+  flex: 1 0;
 }
 
 /* Brands Section Tabs */
