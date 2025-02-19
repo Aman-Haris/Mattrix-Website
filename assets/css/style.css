@@ -50,17 +50,17 @@ body {
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 2rem;
-  padding: 0.5rem 1.5rem;
+  gap: 2.5rem;
+  padding: 0.8rem 2rem;
   border: 2px solid #333;
-  border-radius: 30px;
+  border-radius: 35px;
   background: rgba(255, 255, 255, 0.1);
 }
 
 .nav-links a {
   text-decoration: none;
   color: #333;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.5px;
   transition: color 0.3s ease;
@@ -123,53 +123,6 @@ body {
   height: auto;
   display: block;
   margin: 0 auto;
-}
-
-/* Testimonials Section */
-.testimonials-section {
-  padding: 2rem;
-  text-align: center;
-  background: #f8f8f8;
-}
-
-.testimonial-slider {
-  position: relative;
-  overflow: hidden;
-  max-width: 600px;
-  margin: 1rem auto;
-}
-
-.slide {
-  display: none;
-  padding: 1rem;
-  background: #fff;
-  margin: 0 auto;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.slide.active {
-  display: block;
-}
-
-.slider-controls {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.slider-controls button {
-  cursor: pointer;
-  background: #007BFF;
-  border: none;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  transition: background 0.3s;
-}
-
-.slider-controls button:hover {
-  background: #0056b3;
 }
 
 /* About Section */
