@@ -7,29 +7,36 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <!-- Fixed Navbar placed outside the scrollable container -->
+  <!-- Fixed Navbar -->
   <header class="site-header">
     <nav class="navbar">
+      <div class="nav-logo">
+        <img src="assets/images/nav_logo.jpg" alt="Mattrix Auto Corp Logo">
+      </div>
       <div class="nav-links">
         <a href="index.html">HOME</a>
         <a href="about.html">ABOUT US</a>
         <a href="contact.html">CONTACT US</a>
       </div>
-      <div class="nav-logo">
-        <img src="assets/images/nav_logo.jpg" alt="Mattrix Auto Corp Logo">
-      </div>
     </nav>
   </header>
 
-  <!-- Page Container for content and sticky footer -->
+  <!-- Page Container -->
   <div id="page-container">
     <div id="content-wrap">
       <!-- Hero Section -->
-      <section class="hero">
-        <div class="hero-content">
-          <h2>Welcome to Mattrix Auto Corp</h2>
-          <p>Your one-stop solution for all automobile spare parts!</p>
-          <a href="about.html" class="btn">Learn More</a>
+      <section class="hero hero-new">
+        <div class="hero-cards">
+          <!-- Hero Text -->
+          <div class="hero-text">
+            <h2 class="animate-text">Welcome to Mattrix Auto Corp</h2>
+            <p class="animate-text-delay">Your trusted source for premium auto spare parts</p>
+          </div>
+          
+          <!-- Cards Container - Cards will be dynamically inserted here -->
+          <div class="cards-container">
+            <!-- Cards will be dynamically created by JavaScript -->
+          </div>
         </div>
       </section>
     </div>
@@ -40,6 +47,7 @@
     </footer>
   </div>
 
+  <!-- Scripts -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
