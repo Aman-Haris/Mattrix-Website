@@ -119,68 +119,87 @@ body {
 /* Cards Container and Cards */
 .cards-container {
   position: relative;
-  min-height: 500px;
+  height: 600px;
   perspective: 2000px;
   transform-style: preserve-3d;
+  margin-top: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 4rem;
 }
 
+/* Card Base Styles */
 .card {
   position: absolute;
-  width: 280px;
-  height: 350px;
+  width: 140px;
+  height: 175px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
-  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  cursor: pointer;
+  border-radius: 10px;
   transform-style: preserve-3d;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
 
-.card:nth-child(1) { transform: translateX(-600px) translateZ(-100px) rotateY(45deg); }
-.card:nth-child(2) { transform: translateX(-200px) translateZ(0) rotateY(25deg); }
-.card:nth-child(3) { transform: translateX(200px) translateZ(0) rotateY(-25deg); }
-.card:nth-child(4) { transform: translateX(600px) translateZ(-100px) rotateY(-45deg); }
+/* Positioning for all 20 cards in a centered arc */
+.card:nth-child(1) { transform: translate(-500px, 250px) rotateY(60deg) rotateX(-10deg); }
+.card:nth-child(2) { transform: translate(-450px, 200px) rotateY(55deg) rotateX(-9deg); }
+.card:nth-child(3) { transform: translate(-400px, 160px) rotateY(50deg) rotateX(-8deg); }
+.card:nth-child(4) { transform: translate(-350px, 130px) rotateY(45deg) rotateX(-7deg); }
+.card:nth-child(5) { transform: translate(-300px, 100px) rotateY(40deg) rotateX(-6deg); }
+.card:nth-child(6) { transform: translate(-250px, 80px) rotateY(35deg) rotateX(-5deg); }
+.card:nth-child(7) { transform: translate(-200px, 60px) rotateY(30deg) rotateX(-4deg); }
+.card:nth-child(8) { transform: translate(-150px, 40px) rotateY(25deg) rotateX(-3deg); }
+.card:nth-child(9) { transform: translate(-100px, 30px) rotateY(20deg) rotateX(-2deg); }
+.card:nth-child(10) { transform: translate(-50px, 20px) rotateY(10deg) rotateX(-1deg); }
+.card:nth-child(11) { transform: translate(0px, 15px) rotateY(0deg) rotateX(0deg); }
+.card:nth-child(12) { transform: translate(50px, 20px) rotateY(-10deg) rotateX(-1deg); }
+.card:nth-child(13) { transform: translate(100px, 30px) rotateY(-20deg) rotateX(-2deg); }
+.card:nth-child(14) { transform: translate(150px, 40px) rotateY(-25deg) rotateX(-3deg); }
+.card:nth-child(15) { transform: translate(200px, 60px) rotateY(-30deg) rotateX(-4deg); }
+.card:nth-child(16) { transform: translate(250px, 80px) rotateY(-35deg) rotateX(-5deg); }
+.card:nth-child(17) { transform: translate(300px, 100px) rotateY(-40deg) rotateX(-6deg); }
+.card:nth-child(18) { transform: translate(350px, 130px) rotateY(-45deg) rotateX(-7deg); }
+.card:nth-child(19) { transform: translate(400px, 160px) rotateY(-50deg) rotateX(-8deg); }
+.card:nth-child(20) { transform: translate(450px, 200px) rotateY(-55deg) rotateX(-9deg); }
+
+/* Smooth hover animation */
+.card {
+  transform-origin: center center;
+}
 
 .card:hover {
-  transform: translateZ(50px) scale(1.1) !important;
+  z-index: 100;
+  transform: scale(1.2) translateZ(30px) !important;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Card content styles */
 .card-content {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
+  padding: 1rem;
   transform-style: preserve-3d;
 }
 
-.card img {
-  width: 120px;
-  height: 120px;
+.card-content img {
+  width: 60px;
+  height: 60px;
   object-fit: contain;
-  margin-bottom: 1.5rem;
-  transform: translateZ(30px);
+  margin-bottom: 0.75rem;
   transition: transform 0.3s ease;
 }
 
-.card:hover img {
-  transform: translateZ(50px) scale(1.1);
-}
-
 .card h3 {
-  font-size: 1.4rem;
+  font-size: 0.9rem;
   color: #ffffff;
   text-align: center;
-  transform: translateZ(30px);
   margin: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -198,86 +217,6 @@ body {
   );
   transform: translateZ(-10px);
   pointer-events: none;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-  from {
-      opacity: 0;
-      transform: translateY(30px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-/* Footer */
-.site-footer {
-  background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  position: relative;
-  z-index: 1;
-}
-
-/* Responsive Design */
-@media (max-width: 1400px) {
-  .card:nth-child(1) { transform: translateX(-450px) translateZ(-100px) rotateY(45deg); }
-  .card:nth-child(2) { transform: translateX(-150px) translateZ(0) rotateY(25deg); }
-  .card:nth-child(3) { transform: translateX(150px) translateZ(0) rotateY(-25deg); }
-  .card:nth-child(4) { transform: translateX(450px) translateZ(-100px) rotateY(-45deg); }
-}
-
-@media (max-width: 1024px) {
-  .hero-text h2 {
-      font-size: 2.8rem;
-  }
-  
-  .hero-text p {
-      font-size: 1.2rem;
-  }
-  
-  .card:nth-child(1) { transform: translateX(-300px) translateZ(-50px) rotateY(45deg); }
-  .card:nth-child(2) { transform: translateX(-100px) translateZ(0) rotateY(25deg); }
-  .card:nth-child(3) { transform: translateX(100px) translateZ(0) rotateY(-25deg); }
-  .card:nth-child(4) { transform: translateX(300px) translateZ(-50px) rotateY(-45deg); }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-      flex-direction: column;
-      padding: 1rem;
-  }
-
-  .nav-logo {
-      order: 1;
-      margin-bottom: 1rem;
-  }
-
-  .nav-links {
-      order: 2;
-      flex-direction: column;
-      width: 100%;
-      gap: 1rem;
-      text-align: center;
-  }
-
-  .hero-text h2 {
-      font-size: 2.2rem;
-  }
-
-  .cards-container {
-      flex-direction: column;
-      gap: 2rem;
-  }
-
-  .card {
-      position: relative;
-      transform: none !important;
-      margin: 1rem auto;
-  }
 }
 
 /* Brands Section */
@@ -349,6 +288,157 @@ body {
 .brand-item:hover img {
   filter: grayscale(0%);
   transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Footer */
+.site-footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1600px) {
+  .cards-container {
+      transform: scale(0.9);
+  }
+  
+  .card:nth-child(1) { transform: translate(-810px, 180px) rotateY(45deg); }
+  .card:nth-child(2) { transform: translate(-720px, 135px) rotateY(42deg); }
+  .card:nth-child(3) { transform: translate(-630px, 90px) rotateY(39deg); }
+  .card:nth-child(4) { transform: translate(-540px, 54px) rotateY(36deg); }
+  .card:nth-child(5) { transform: translate(-450px, 27px) rotateY(33deg); }
+  .card:nth-child(6) { transform: translate(-360px, 9px) rotateY(30deg); }
+  .card:nth-child(7) { transform: translate(-270px, 0px) rotateY(27deg); }
+  .card:nth-child(8) { transform: translate(-180px, -4px) rotateY(24deg); }
+  .card:nth-child(9) { transform: translate(-90px, -7px) rotateY(21deg); }
+  .card:nth-child(10) { transform: translate(0px, -9px) rotateY(0deg); }
+  .card:nth-child(11) { transform: translate(90px, -7px) rotateY(-21deg); }
+  .card:nth-child(12) { transform: translate(180px, -4px) rotateY(-24deg); }
+  .card:nth-child(13) { transform: translate(270px, 0px) rotateY(-27deg); }
+  .card:nth-child(14) { transform: translate(360px, 9px) rotateY(-30deg); }
+  .card:nth-child(15) { transform: translate(450px, 27px) rotateY(-33deg); }
+  .card:nth-child(16) { transform: translate(540px, 54px) rotateY(-36deg); }
+  .card:nth-child(17) { transform: translate(630px, 90px) rotateY(-39deg); }
+  .card:nth-child(18) { transform: translate(720px, 135px) rotateY(-42deg); }
+  .card:nth-child(19) { transform: translate(810px, 180px) rotateY(-45deg); }
+  .card:nth-child(20) { transform: translate(900px, 225px) rotateY(-48deg); }
+}
+
+@media (max-width: 1400px) {
+  .cards-container {
+      transform: scale(0.8);
+  }
+  
+  .hero-text h2 {
+      font-size: 3rem;
+  }
+  
+  .hero-text p {
+      font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cards-container {
+      transform: scale(0.6);
+  }
+  
+  .hero-text h2 {
+      font-size: 2.8rem;
+  }
+  
+  .hero-text p {
+      font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      padding: 1rem;
+  }
+
+  .nav-logo {
+      order: 1;
+      margin-bottom: 1rem;
+  }
+
+  .nav-links {
+      order: 2;
+      flex-direction: column;
+      width: 100%;
+      gap: 1rem;
+      text-align: center;
+  }
+
+  .hero-text h2 {
+      font-size: 2.2rem;
+  }
+
+  .cards-container {
+      transform: none;
+      height: auto;
+      perspective: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+  }
+
+  .card {
+      position: relative;
+      transform: none !important;
+      margin: 0;
+      width: 100%;
+      height: 175px;
+  }
+
+  .card:hover {
+      transform: translateZ(0) scale(1.05) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h2 {
+      font-size: 1.8rem;
+  }
+
+  .hero-text p {
+      font-size: 1rem;
+  }
+
+  .cards-container {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .card {
+      height: 150px;
+  }
+
+  .card-content img {
+      width: 50px;
+      height: 50px;
+  }
+
+  .card h3 {
+      font-size: 0.8rem;
+  }
 }
 
 /* Responsive Design for Brands Section */
