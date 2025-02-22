@@ -26,6 +26,8 @@ body {
   align-items: center;
   padding: 1rem 2rem;
   width: 100%;
+  padding-top: 5px;    /* Reduce top padding */
+  padding-bottom: 5px; /* Reduce bottom padding */
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(8px);
   transition: background-color 0.3s ease;
@@ -103,26 +105,6 @@ body {
 
 .btn:hover {
   background: #0056b3;
-}
-
-/* Brands Section */
-.brands-section {
-  padding: 2rem;
-  text-align: center;
-}
-
-.brands-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.brand-item img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
 }
 
 /* About Section */
@@ -224,43 +206,6 @@ html, body {
 /* Content wrapper that expands to fill available space */
 #content-wrap {
   flex: 1 0;
-}
-
-/* Brands Section Tabs */
-.brands-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.tab-button {
-  padding: 0.5rem 1rem;
-  border: none;
-  background: #007BFF;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 3px;
-  font-size: 0.9rem;
-  transition: background 0.3s;
-}
-
-.tab-button.active,
-.tab-button:hover {
-  background: #0056b3;
-}
-
-.brands-tab-content {
-  margin-top: 1rem;
-}
-
-.tab-panel {
-  display: none;
-}
-
-.tab-panel.active {
-  display: block;
 }
 
 /* Button Hover Animations */
