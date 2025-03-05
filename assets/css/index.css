@@ -33,7 +33,7 @@
     margin: 0 auto;
     width: 100%;
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 45% 55%;
     gap: 2rem;
     padding: 2rem;
     position: relative;
