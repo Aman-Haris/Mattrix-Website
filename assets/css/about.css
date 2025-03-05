@@ -3,20 +3,20 @@
     padding: 120px 2rem 4rem;
     max-width: 1200px;
     margin: 0 auto;
-    min-height: calc(100vh - 60px); /* Account for footer */
+    min-height: calc(100vh - 60px);
     animation: fadeIn 0.8s ease-out;
 }
 
 /* Section Headings */
-.about-section h2 {
-    font-size: 2.8rem;
+.about-section h1 {
+    font-size: 3rem;
     color: var(--text-color);
     margin-bottom: 2rem;
     text-align: center;
     position: relative;
 }
 
-.about-section h2::after {
+.about-section h1::after {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -27,11 +27,17 @@
     background: var(--primary-color);
 }
 
-.about-section h3 {
-    font-size: 2rem;
+.about-section h2 {
+    font-size: 2.4rem;
     color: var(--text-color);
     margin: 2.5rem 0 1.5rem;
     position: relative;
+}
+
+.about-section h3 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin: 1.5rem 0 1rem;
 }
 
 /* Main Content Paragraphs */
@@ -46,10 +52,15 @@
 }
 
 /* Team Section */
-.team-section {
+.team-section-wrapper {
     margin-top: 4rem;
+    padding: 2rem 0;
+}
+
+.team-section {
+    margin-top: 3rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3rem;
     padding: 2rem 0;
 }
@@ -95,9 +106,11 @@
     border-radius: 50%;
     margin-bottom: 1.5rem;
     object-fit: cover;
+    object-position: top center;
     border: 4px solid #fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform var(--transition-normal);
+    background-color: #f5f5f5; /* Placeholder background */
 }
 
 .team-member:hover img {
@@ -105,7 +118,7 @@
 }
 
 /* Team Member Details */
-.team-member h4 {
+.team-member h3 {
     font-size: 1.5rem;
     color: var(--text-color);
     margin-bottom: 0.5rem;
@@ -117,7 +130,110 @@
     margin-bottom: 1rem;
 }
 
-/* Social Links (if needed) */
+.member-bio {
+    font-size: 0.9rem;
+    color: #777;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+/* Mission & Vision Sections */
+.mission-section,
+.vision-section {
+    background: #f8f9fa;
+    padding: 3rem;
+    border-radius: 15px;
+    margin: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-section::before,
+.vision-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        rgba(0, 123, 255, 0.05) 0%,
+        rgba(0, 123, 255, 0) 100%);
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    margin: 3rem 0;
+    background: linear-gradient(135deg, #2b4c8a 0%, #1a365d 100%);
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+}
+
+.cta-section h2 {
+    color: white !important;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.cta-section p {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    margin-top: 1rem;
+    background: white;
+    color: #2b4c8a;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    background: #f8f9fa;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Social Links */
 .social-links {
     display: flex;
     justify-content: center;
@@ -135,52 +251,18 @@
     color: var(--primary-color);
 }
 
-/* Mission Section */
-.mission-section {
-    background: #f8f9fa;
-    padding: 3rem;
-    border-radius: 15px;
-    margin: 3rem 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.mission-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, 
-        rgba(0, 123, 255, 0.05) 0%,
-        rgba(0, 123, 255, 0) 100%);
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* Responsive Design */
 @media (max-width: 1200px) {
     .about-section {
         padding: 100px 1.5rem 3rem;
     }
 
-    .about-section h2 {
+    .about-section h1 {
         font-size: 2.5rem;
     }
 
-    .about-section h3 {
-        font-size: 1.8rem;
+    .about-section h2 {
+        font-size: 2.2rem;
     }
 }
 
@@ -200,12 +282,12 @@
         padding: 90px 1rem 2rem;
     }
 
-    .about-section h2 {
+    .about-section h1 {
         font-size: 2.2rem;
     }
 
-    .about-section h3 {
-        font-size: 1.6rem;
+    .about-section h2 {
+        font-size: 1.8rem;
     }
 
     .team-member img {
@@ -213,18 +295,30 @@
         height: 150px;
     }
 
-    .mission-section {
+    .mission-section,
+    .vision-section {
         padding: 2rem;
+    }
+    .cta-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .cta-section h2 {
+        font-size: 2rem;
+    }
+
+    .cta-section p {
+        font-size: 1.1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .about-section h2 {
+    .about-section h1 {
         font-size: 2rem;
     }
 
-    .about-section h3 {
-        font-size: 1.4rem;
+    .about-section h2 {
+        font-size: 1.6rem;
     }
 
     .team-member {
@@ -236,7 +330,24 @@
         height: 120px;
     }
 
-    .team-member h4 {
+    .team-member h3 {
         font-size: 1.3rem;
+    }
+
+    .cta-section {
+        padding: 2.5rem 1rem;
+    }
+
+    .cta-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .cta-section p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
     }
 }

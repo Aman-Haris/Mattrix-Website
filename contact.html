@@ -3,63 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mattrix Auto Corp - Contact Us</title>
+  <meta name="description" content="Contact Mattrix Auto Corp for premium car services in Bangalore. Reach us via WhatsApp, phone, or visit our location for expert automotive solutions.">
+  <meta name="keywords" content="car service bangalore, auto repair, Mattrix Auto Corp contact, automotive services">
+  <title>Contact Mattrix Auto Corp - Expert Automotive Services</title>
   <link rel="stylesheet" href="assets/css/base.css" />
   <link rel="stylesheet" href="assets/css/contact.css" />
 </head>
 <body>
-  <!-- Fixed Navbar placed outside the scrollable container -->
   <header class="site-header">
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
       <div class="nav-links">
         <a href="index.html">HOME</a>
         <a href="about.html">ABOUT US</a>
-        <a href="contact.html">CONTACT US</a>
+        <a href="contact.html" aria-current="page">CONTACT US</a>
       </div>
       <div class="nav-logo">
-        <img src="assets/images/nav_logo.jpg" alt="Mattrix Auto Corp Logo">
+        <img src="assets/images/nav_logo.jpg" alt="Mattrix Auto Corp Logo" width="150" height="50">
       </div>
     </nav>
   </header>
 
-  <!-- Page Container for content and sticky footer -->
   <div id="page-container">
-    <div id="content-wrap">
-      <!-- Contact Section -->
+    <main id="content-wrap">
       <section class="contact-section">
-        <h2>We'd love to hear from you</h2>
+        <h1>Get Expert Automotive Care Today</h1>
+        <p class="contact-intro">Our team of certified professionals is ready to assist you with all your automotive needs. Choose your preferred way to connect with us.</p>
+        
         <div class="contact-options">
           <div class="option">
-            <h3>Chat</h3>
-            <!-- WhatsApp Link Example -->
-            <a href="https://wa.me/919964992828" target="_blank" class="btn">
-              Chat with us
+            <h2>Instant Chat Support</h2>
+            <p>Get quick responses to your queries through WhatsApp</p>
+            <a href="https://wa.me/919964992828" target="_blank" rel="noopener" class="btn" aria-label="Chat with us on WhatsApp">
+              Start WhatsApp Chat
             </a>
           </div>
+          
           <div class="option">
-            <h3>Phone</h3>
-            <a href="tel:+919964992828" class="btn">
-              Call us at +91-9964992828
+            <h2>Direct Support Line</h2>
+            <p>Speak directly with our service experts</p>
+            <a href="tel:+919964992828" class="btn" aria-label="Call our support team">
+              Call: +91 99649 92828
             </a>
           </div>
         </div>
 
-        <!-- Meet Us Section with Map -->
-        <div class="meet-us">
-          <h3>Meet Us</h3>
+        <div class="option meet-us">
+          <h2>Visit Our Service Center</h2>
+          <address class="location-details">
+            Mattrix Auto Corp<br>
+            #123, Sample Street, Bangalore - 560001<br>
+            Business Hours: Mon-Sat 9:00 AM - 6:00 PM
+          </address>
           <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1996272417114!2d77.57885807465063!3d12.95907428735516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae155637b1fc67%3A0x3b7b9e856f276c2!2sMATTRIX%20AUTO%20CORP!5e0!3m2!1sen!2sin!4v1739803823561!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1996272417114!2d77.57885807465063!3d12.95907428735516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae155637b1fc67%3A0x3b7b9e856f276c2!2sMATTRIX%20AUTO%20CORP!5e0!3m2!1sen!2sin!4v1739803823561!5m2!1sen!2sin" 
+              width="600" 
+              height="450" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mattrix Auto Corp Location Map"
+              aria-label="Google Maps showing our location">
+            </iframe>
           </div>
-          <a href="https://maps.google.com/maps?ll=12.959074,77.578858&z=16&t=m&hl=en&gl=IN&mapclient=embed&cid=4283484741业8723650" target="_blank" class="btn directions-btn">
-            Get Directions
-          </a>
+        </div>
+
+        <div class="response-time">
+          <p>We typically respond within 30 minutes during business hours</p>
         </div>
       </section>
-    </div>
-    <!-- Footer remains inside the page container -->
+    </main>
+
     <footer class="site-footer">
       <p>&copy; 2025 Mattrix Auto Corp. All rights reserved.</p>
     </footer>
   </div>
+
+  <!-- Schema.org markup for Google -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoRepair",
+      "name": "Mattrix Auto Corp",
+      "image": "assets/images/nav_logo.jpg",
+      "telephone": "+919964992828",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "#123, Sample Street",
+        "addressLocality": "Bangalore",
+        "postalCode": "560001",
+        "addressCountry": "IN"
+      },
+      "openingHours": "Mo-Sa 09:00-18:00"
+    }
+  </script>
 </body>
 </html>

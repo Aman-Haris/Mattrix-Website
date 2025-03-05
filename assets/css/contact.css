@@ -13,16 +13,16 @@
     animation: fadeIn 0.8s ease-out;
 }
 
-/* Section Header */
-.contact-section h2 {
+/* Section Headers */
+.contact-section h1 {
     font-size: 2.8rem;
     color: var(--text-color);
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     position: relative;
 }
 
-.contact-section h2::after {
+.contact-section h1::after {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -33,19 +33,22 @@
     background: var(--primary-color);
 }
 
+/* Intro text styling */
+.contact-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.2rem;
+    color: var(--text-color-light);
+    line-height: 1.6;
+}
+
 /* Contact Options Grid */
 .contact-options {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-}
-
-.address-option address {
-    font-style: normal;
-    margin-bottom: 1.5rem;
-    color: #666;
-    line-height: 1.6;
-    font-size: 1.1rem;
+    margin-bottom: 3rem;
 }
 
 /* Contact Option Cards */
@@ -84,10 +87,17 @@
 }
 
 /* Option Headers */
-.option h3 {
+.option h2 {
     font-size: 1.8rem;
     color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+/* Option content */
+.option p {
     margin-bottom: 1.5rem;
+    color: var(--text-color-light);
+    line-height: 1.6;
 }
 
 /* Contact Buttons */
@@ -110,32 +120,32 @@
     box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
 }
 
+/* Enhanced focus states */
+.btn:focus,
+.option:focus-within {
+    outline: 3px solid rgba(var(--primary-color-rgb), 0.5);
+    outline-offset: 2px;
+}
+
+/* Meet Us Section */
+.meet-us {
+    margin: 3rem 0;
+}
+
+/* Location details styling */
+.location-details {
+    margin: 1.5rem 0;
+    font-style: normal;
+    line-height: 1.8;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
 /* Map Container */
 .map-container {
-    margin: 4rem 0;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     position: relative;
-}
-
-.map-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 2px solid var(--primary-color);
-    border-radius: 15px;
-    opacity: 0;
-    transition: opacity var(--transition-normal);
-    z-index: 1;
-    pointer-events: none;
-}
-
-.map-container:hover::before {
-    opacity: 1;
 }
 
 .map-container iframe {
@@ -145,68 +155,35 @@
     display: block;
 }
 
-/* Address Section */
-.meet-us {
-    text-align: center;
-    padding: 3rem;
-    background: #f8f9fa;
-    border-radius: 15px;
-    margin: 3rem 0;
-    position: relative;
-}
-
-.meet-us::before {
-    content: '';
+/* Map loading state */
+.map-container::before {
+    content: 'Loading map...';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, 
-        rgba(0, 123, 255, 0.05) 0%,
-        rgba(0, 123, 255, 0) 100%);
-    border-radius: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-color-light);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
-.meet-us h3 {
-    font-size: 2rem;
+.map-container.loading::before {
+    opacity: 1;
+}
+
+/* Response time section */
+.response-time {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1rem;
+    background: rgba(var(--primary-color-rgb), 0.1);
+    border-radius: 8px;
+}
+
+.response-time p {
     color: var(--text-color);
-    margin-bottom: 1.5rem;
-    position: relative;
-}
-
-.meet-us p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #666;
-    margin: 0;
-}
-
-/* Social Media Links (if needed) */
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.social-links a {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--primary-color);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: all var(--transition-normal);
-}
-
-.social-links a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
-    background: #0056b3;
+    font-size: 1rem;
 }
 
 /* Animations */
@@ -221,17 +198,27 @@
     }
 }
 
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .option,
+    .btn,
+    .contact-section {
+        animation: none;
+        transition: none;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
     .contact-section {
         padding: 100px 1.5rem 3rem;
     }
 
-    .contact-section h2 {
+    .contact-section h1 {
         font-size: 2.5rem;
     }
 
-    .option h3 {
+    .option h2 {
         font-size: 1.6rem;
     }
 }
@@ -241,14 +228,6 @@
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 1.5rem;
     }
-
-    .meet-us h3 {
-        font-size: 1.8rem;
-    }
-
-    .meet-us p {
-        font-size: 1.1rem;
-    }
 }
 
 @media (max-width: 768px) {
@@ -256,8 +235,13 @@
         padding: 90px 1rem 2rem;
     }
 
-    .contact-section h2 {
+    .contact-section h1 {
         font-size: 2.2rem;
+    }
+
+    .contact-intro {
+        font-size: 1.1rem;
+        padding: 0 1rem;
     }
 
     .option {
@@ -272,34 +256,43 @@
         height: 350px;
     }
 
-    .meet-us {
-        padding: 2rem;
+    .location-details {
+        font-size: 1rem;
+    }
+
+    .response-time {
+        margin: 2rem 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .contact-section h2 {
+    .contact-section h1 {
         font-size: 2rem;
     }
 
-    .option h3 {
+    .option h2 {
         font-size: 1.4rem;
-    }
-
-    .meet-us h3 {
-        font-size: 1.6rem;
-    }
-
-    .meet-us p {
-        font-size: 1rem;
     }
 
     .map-container iframe {
         height: 300px;
     }
+}
 
-    .social-links a {
-        width: 35px;
-        height: 35px;
+/* Print styles */
+@media print {
+    .btn,
+    .navbar {
+        display: none;
+    }
+
+    .location-details,
+    .contact-section h1,
+    .option h2 {
+        color: #000;
+    }
+
+    .map-container {
+        page-break-inside: avoid;
     }
 }
