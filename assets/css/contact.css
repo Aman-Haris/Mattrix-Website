@@ -1,4 +1,10 @@
 /* Contact Section Main Styles */
+.contact-container {
+    display: grid;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
 .contact-section {
     padding: 120px 2rem 4rem;
     max-width: 1200px;
@@ -32,7 +38,14 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin: 3rem 0;
+}
+
+.address-option address {
+    font-style: normal;
+    margin-bottom: 1.5rem;
+    color: #666;
+    line-height: 1.6;
+    font-size: 1.1rem;
 }
 
 /* Contact Option Cards */
