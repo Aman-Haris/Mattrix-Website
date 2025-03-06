@@ -251,103 +251,340 @@
     color: var(--accent-color); /* Changed to accent color (red) */
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
+/* Responsive Design for Desktop (1280px-1920px) */
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
     .about-section {
-        padding: 100px 1.5rem 3rem;
+        padding: 120px 2rem 4rem;
+        max-width: 1200px;
     }
+    
+    .about-section h1 {
+        font-size: 3rem;
+    }
+    
+    .about-section h2 {
+        font-size: 2.4rem;
+    }
+    
+    .about-section h3 {
+        font-size: 1.8rem;
+    }
+    
+    .about-section p {
+        font-size: 1.1rem;
+    }
+    
+    .team-section {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+    }
+    
+    .team-member img {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .cta-section h2 {
+        font-size: 2.5rem;
+    }
+    
+    .cta-section p {
+        font-size: 1.2rem;
+    }
+}
 
+/* Responsive Design for Tablets (601px-1279px) */
+@media screen and (min-width: 601px) and (max-width: 1279px) {
+    .about-section {
+        padding: 110px 1.5rem 3rem;
+    }
+    
     .about-section h1 {
         font-size: 2.5rem;
     }
-
+    
     .about-section h2 {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
+        margin: 2rem 0 1.2rem;
     }
-}
-
-@media (max-width: 992px) {
-    .team-section {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
+    
+    .about-section h3 {
+        font-size: 1.6rem;
+        margin: 1.2rem 0 0.8rem;
     }
-
+    
     .about-section p {
         font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 1.2rem;
+    }
+    
+    .team-section-wrapper {
+        margin-top: 3rem;
+        padding: 1.5rem 0;
+    }
+    
+    .team-section {
+        margin-top: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        padding: 1.5rem 0;
+    }
+    
+    .team-member {
+        padding: 1.8rem;
+    }
+    
+    .team-member img {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 1.2rem;
+    }
+    
+    .team-member h3 {
+        font-size: 1.4rem;
+    }
+    
+    .mission-section,
+    .vision-section {
+        padding: 2.5rem;
+        margin: 2.5rem 0;
+    }
+    
+    .cta-section {
+        padding: 3.5rem 1.8rem;
+        margin: 2.5rem 0;
+    }
+    
+    .cta-section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .cta-section p {
+        font-size: 1.1rem;
+        margin-bottom: 1.8rem;
+    }
+    
+    .cta-button {
+        padding: 0.9rem 2.2rem;
+        font-size: 1rem;
+    }
+    
+    /* For smaller tablets (601px-900px) */
+    @media screen and (max-width: 900px) {
+        .about-section {
+            padding: 100px 1.2rem 2.5rem;
+        }
+        
+        .about-section h1 {
+            font-size: 2.2rem;
+        }
+        
+        .about-section h2 {
+            font-size: 1.9rem;
+        }
+        
+        .team-section {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.8rem;
+        }
+        
+        .team-member {
+            padding: 1.5rem;
+        }
+        
+        .team-member img {
+            width: 140px;
+            height: 140px;
+        }
+        
+        .mission-section,
+        .vision-section {
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .cta-section {
+            padding: 3rem 1.5rem;
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+        }
     }
 }
 
-@media (max-width: 768px) {
+/* Responsive Design for Mobile (360px-600px) */
+@media screen and (min-width: 240px) and (max-width: 600px) {
     .about-section {
         padding: 90px 1rem 2rem;
+        min-height: auto;
     }
-
+    
     .about-section h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
     }
-
+    
+    .about-section h1::after {
+        width: 50px;
+        height: 2px;
+        bottom: -8px;
+    }
+    
     .about-section h2 {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
+        margin: 1.8rem 0 1rem;
     }
-
+    
+    .about-section h3 {
+        font-size: 1.4rem;
+        margin: 1rem 0 0.7rem;
+    }
+    
+    .about-section p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    
+    .team-section-wrapper {
+        margin-top: 2rem;
+        padding: 1rem 0;
+    }
+    
+    .team-section {
+        margin-top: 1.5rem;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem 0;
+    }
+    
+    .team-member {
+        padding: 1.5rem;
+    }
+    
+    .team-member::before {
+        height: 3px;
+    }
+    
     .team-member img {
-        width: 150px;
-        height: 150px;
+        width: 130px;
+        height: 130px;
+        margin-bottom: 1rem;
+        border-width: 3px;
     }
-
+    
+    .team-member h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .team-member p {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .member-bio {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
     .mission-section,
     .vision-section {
-        padding: 2rem;
+        padding: 1.5rem;
+        margin: 2rem 0;
+        border-radius: 10px;
     }
+    
     .cta-section {
-        padding: 3rem 1.5rem;
+        padding: 2.5rem 1rem;
+        margin: 2rem 0;
+        border-radius: 10px;
     }
-
+    
     .cta-section h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
     }
-
+    
     .cta-section p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .cta-button {
+        padding: 0.8rem 2rem;
+        font-size: 0.95rem;
+        margin-top: 0.7rem;
+    }
+    
+    .social-links {
+        gap: 0.8rem;
+        margin-top: 1.2rem;
+    }
+    
+    .social-links a {
         font-size: 1.1rem;
     }
 }
 
-@media (max-width: 480px) {
+/* Extra small devices */
+@media screen and (max-width: 359px) {
+    .about-section {
+        padding: 80px 0.8rem 1.5rem;
+    }
+    
     .about-section h1 {
-        font-size: 2rem;
-    }
-
-    .about-section h2 {
-        font-size: 1.6rem;
-    }
-
-    .team-member {
-        padding: 1.5rem;
-    }
-
-    .team-member img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .team-member h3 {
-        font-size: 1.3rem;
-    }
-
-    .cta-section {
-        padding: 2.5rem 1rem;
-    }
-
-    .cta-section h2 {
         font-size: 1.8rem;
     }
-
-    .cta-section p {
-        font-size: 1rem;
+    
+    .about-section h2 {
+        font-size: 1.5rem;
     }
-
+    
+    .about-section h3 {
+        font-size: 1.3rem;
+    }
+    
+    .about-section p {
+        font-size: 0.9rem;
+    }
+    
+    .team-member {
+        padding: 1.2rem;
+    }
+    
+    .team-member img {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .team-member h3 {
+        font-size: 1.2rem;
+    }
+    
+    .mission-section,
+    .vision-section {
+        padding: 1.2rem;
+        margin: 1.5rem 0;
+    }
+    
+    .cta-section {
+        padding: 2rem 0.8rem;
+    }
+    
+    .cta-section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .cta-section p {
+        font-size: 0.9rem;
+    }
+    
     .cta-button {
-        padding: 0.8rem 2rem;
-        font-size: 1rem;
+        padding: 0.7rem 1.8rem;
+        font-size: 0.9rem;
     }
 }
