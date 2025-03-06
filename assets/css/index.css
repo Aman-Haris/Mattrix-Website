@@ -6,7 +6,7 @@
         rgba(0, 0, 0, 0.8),
         rgba(0, 0, 0, 0.8)
     ),
-    url('../images/hero-bg.jpg') no-repeat center center/cover;
+    url('../images/dummy.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -22,7 +22,7 @@
     bottom: 0;
     background: radial-gradient(
         circle at center,
-        rgba(0, 123, 255, 0.1) 0%,
+        rgba(46, 45, 136, 0.2) 0%, /* Changed to primary color with opacity */
         rgba(0, 0, 0, 0.3) 100%
     );
 }
@@ -57,7 +57,7 @@
 .hero-text h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    color: white;
+    color: var(--light-text);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -98,26 +98,26 @@
 }
 
 .cta-button.primary {
-    background: var(--primary-color);
-    color: white;
-    border: 2px solid var(--primary-color);
+    background: var(--accent-color); /* Changed to accent color (red) */
+    color: var(--light-text);
+    border: 2px solid var(--accent-color);
 }
 
 .cta-button.secondary {
     background: transparent;
-    color: white;
-    border: 2px solid white;
+    color: var(--light-text);
+    border: 2px solid var(--light-text);
 }
 
 .cta-button.primary:hover {
     background: transparent;
-    color: var(--primary-color);
+    color: var(--accent-color); /* Changed to accent color */
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(228, 42, 36, 0.3); /* Changed to accent color shadow */
 }
 
 .cta-button.secondary:hover {
-    background: white;
+    background: var(--light-text);
     color: var(--primary-color);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
@@ -140,7 +140,7 @@
 .trust-indicators span::before {
     content: '✓';
     margin-right: 0.5rem;
-    color: var(--primary-color);
+    color: var(--accent-color); /* Changed to accent color */
 }
 
 /* Right Side Content */
@@ -210,7 +210,7 @@
 
 /* Brands Section */
 .brands-section {
-    background-color: #f8f9fa;
+    background-color: var(--light-bg); /* Changed to light gray from palette */
     padding: 5rem 2rem;
     position: relative;
     overflow: hidden;
@@ -223,7 +223,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent);
+    background: linear-gradient(to right, transparent, var(--medium-gray), transparent); /* Changed to medium gray */
 }
 
 .brands-container {
@@ -254,13 +254,13 @@
     transform: translateX(-50%);
     width: 50px;
     height: 3px;
-    background: var(--primary-color);
+    background: var(--accent-color); /* Changed to accent color */
 }
 
 .brands-text p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #666;
+    color: var(--text-color);
 }
 
 .brands-grid {
@@ -271,7 +271,7 @@
 }
 
 .brand-item {
-    background: white;
+    background: var(--light-text);
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);

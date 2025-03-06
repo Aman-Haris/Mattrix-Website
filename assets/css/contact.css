@@ -30,7 +30,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: var(--primary-color);
+    background: var(--accent-color); /* Changed to accent color (red) */
 }
 
 /* Intro text styling */
@@ -39,7 +39,7 @@
     max-width: 800px;
     margin: 0 auto 3rem;
     font-size: 1.2rem;
-    color: var(--text-color-light);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
@@ -53,7 +53,7 @@
 
 /* Contact Option Cards */
 .option {
-    background: white;
+    background: var(--light-text); /* Changed to white from palette */
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
@@ -71,7 +71,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(to right, var(--primary-color), #00a8ff);
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color)); /* Changed to brand colors */
     transform: scaleX(0);
     transition: transform var(--transition-normal);
     transform-origin: left;
@@ -96,7 +96,7 @@
 /* Option content */
 .option p {
     margin-bottom: 1.5rem;
-    color: var(--text-color-light);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
@@ -104,26 +104,26 @@
 .btn {
     display: inline-block;
     padding: 1rem 2rem;
-    background: var(--primary-color);
-    color: white;
+    background: var(--accent-color); /* Changed to accent color (red) */
+    color: var(--light-text);
     text-decoration: none;
     border-radius: 30px;
     font-weight: 500;
     transition: all var(--transition-normal);
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--accent-color); /* Changed to accent color (red) */
 }
 
 .btn:hover {
     background: transparent;
-    color: var(--primary-color);
+    color: var(--accent-color); /* Changed to accent color (red) */
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(228, 42, 36, 0.3); /* Changed to accent color shadow */
 }
 
 /* Enhanced focus states */
 .btn:focus,
 .option:focus-within {
-    outline: 3px solid rgba(var(--primary-color-rgb), 0.5);
+    outline: 3px solid rgba(228, 42, 36, 0.5); /* Changed to accent color with opacity */
     outline-offset: 2px;
 }
 
@@ -146,6 +146,7 @@
     border-radius: 15px;
     overflow: hidden;
     position: relative;
+    border: 1px solid var(--medium-gray); /* Added border with medium gray */
 }
 
 .map-container iframe {
@@ -162,7 +163,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: var(--text-color-light);
+    color: var(--text-color);
     z-index: 1;
     opacity: 0;
     transition: opacity 0.3s;
@@ -177,8 +178,9 @@
     text-align: center;
     margin-top: 3rem;
     padding: 1rem;
-    background: rgba(var(--primary-color-rgb), 0.1);
+    background: rgba(46, 45, 136, 0.1); /* Changed to primary color with opacity */
     border-radius: 8px;
+    border: 1px solid rgba(46, 45, 136, 0.2); /* Added subtle border */
 }
 
 .response-time p {

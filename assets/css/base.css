@@ -1,214 +1,305 @@
+/* Import fonts in your base.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@300;400;500&display=swap');
+
 /* General Reset and Base Variables */
 :root {
-    --primary-color: #007BFF;
-    --text-color: #333;
-    --light-text: #fff;
-    --glass-bg: rgba(255, 255, 255, 0.1);
-    --glass-border: rgba(255, 255, 255, 0.2);
-    --glass-shadow: rgba(0, 0, 0, 0.1);
-    --transition-slow: 0.5s ease;
-    --transition-normal: 0.3s ease;
-    --transition-fast: 0.2s ease;
+  --primary-color: #2E2D88;        /* Navy Blue - kept as is */
+  --accent-color: #E42A24;         /* Bright Red - added from logo */
+  --text-color: #333333;           /* Dark Gray - kept as is */
+  --light-text: #FFFFFF;           /* White - kept as is */
+  --light-bg: #F5F5F5;             /* Light Gray - added for sections */
+  --medium-gray: #CCCCCC;          /* Medium Gray - added for borders */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: rgba(0, 0, 0, 0.1);
+  --transition-slow: 0.5s ease;
+  --transition-normal: 0.3s ease;
+  --transition-fast: 0.2s ease;
+  /* Font variables */
+  --heading-font: 'Montserrat', sans-serif;
+  --body-font: 'Roboto', sans-serif;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+  font-family: var(--body-font);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-color);
+  overflow-x: hidden;
+  background: var(--light-text); /* Changed to white for main background */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Navigation Styles - Keeping as requested */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: transparent;
+  transition: all var(--transition-normal);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-normal);
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 20px var(--glass-shadow);
+}
+
+.nav-logo {
+  order: 1;
+  margin-right: auto;
+}
+
+.nav-logo img {
+  height: 80px;
+  width: auto;
+  transition: transform var(--transition-normal);
+}
+
+.nav-logo img:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  order: 2;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 0.8rem 2rem;
+  border: 2px solid var(--text-color);
+  border-radius: 35px;
+  background: var(--glass-bg);
+  transition: all var(--transition-normal);
+  font-family: var(--heading-font);
+  font-weight: 500;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width var(--transition-normal);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Page Container */
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 60px; /* Footer height */
+}
+
+/* Footer Styles - Updated with primary color */
+.site-footer {
+  background: var(--primary-color); /* Changed to navy blue from the brand color */
+  color: var(--light-text);
+  text-align: center;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--glass-border), transparent);
+}
+
+/* Common Animations */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
   }
-  
-  /* Reset */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
-  
-  /* Base Styles */
-  body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    overflow-x: hidden;
-    background: #f8f9fa;
+}
+
+/* Common Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* New utility classes for the color palette */
+.bg-primary {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+}
+
+.bg-accent {
+  background-color: var(--accent-color);
+  color: var(--light-text);
+}
+
+.bg-light {
+  background-color: var(--light-bg);
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+.border-medium {
+  border: 1px solid var(--medium-gray);
+}
+
+/* Button styles with new colors */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-normal);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+}
+
+.btn-primary:hover {
+  background-color: #3a39a3; /* Slightly lighter navy */
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(46, 45, 136, 0.3);
+}
+
+.btn-accent {
+  background-color: var(--accent-color);
+  color: var(--light-text);
+}
+
+.btn-accent:hover {
+  background-color: #f03c36; /* Slightly lighter red */
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(228, 42, 36, 0.3);
+}
+
+/* Section styles */
+.section {
+  padding: 4rem 0;
+}
+
+.section-alt {
+  background-color: var(--light-bg);
+}
+
+.cta-button, .btn {
+  font-family: var(--heading-font);
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .container {
+      max-width: 1200px;
   }
-  
-  /* Navigation Styles */
-  .site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    background: transparent;
-    transition: all var(--transition-normal);
+}
+
+@media (max-width: 1024px) {
+  .container {
+      max-width: 960px;
   }
-  
+}
+
+@media (max-width: 768px) {
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    transition: all var(--transition-normal);
-  }
-  
-  .navbar.scrolled {
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 20px var(--glass-shadow);
+      flex-direction: column;
+      padding: 1rem;
   }
   
   .nav-logo {
-    order: 1;
-    margin-right: auto;
-  }
-  
-  .nav-logo img {
-    height: 80px;
-    width: auto;
-    transition: transform var(--transition-normal);
-  }
-  
-  .nav-logo img:hover {
-    transform: scale(1.05);
+      margin-bottom: 1rem;
   }
   
   .nav-links {
-    order: 2;
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 2.5rem;
-    padding: 0.8rem 2rem;
-    border: 2px solid var(--text-color);
-    border-radius: 35px;
-    background: var(--glass-bg);
-    transition: all var(--transition-normal);
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    transition: all var(--transition-normal);
-    position: relative;
-  }
-  
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary-color);
-    transition: width var(--transition-normal);
-  }
-  
-  .nav-links a:hover::after {
-    width: 100%;
-  }
-  
-  .nav-links a:hover {
-    color: var(--primary-color);
-    transform: translateY(-2px);
-  }
-  
-  /* Page Container */
-  #page-container {
-    position: relative;
-    min-height: 100vh;
-  }
-  
-  #content-wrap {
-    padding-bottom: 60px; /* Footer height */
-  }
-  
-  /* Footer Styles */
-  .site-footer {
-    background: #333;
-    color: var(--light-text);
-    text-align: center;
-    padding: 1.5rem;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .site-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
-  }
-  
-  /* Common Animations */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Common Utility Classes */
-  .text-center {
-    text-align: center;
-  }
-  
-  .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 1400px) {
-    .container {
-      max-width: 1200px;
-    }
-  }
-  
-  @media (max-width: 1024px) {
-    .container {
-      max-width: 960px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      padding: 1rem;
-    }
-    
-    .nav-logo {
-      margin-bottom: 1rem;
-    }
-    
-    .nav-links {
       flex-direction: column;
       width: 100%;
       gap: 1rem;
-    }
-    
-    .container {
-      padding: 0 1rem;
-    }
   }
   
-  @media (max-width: 480px) {
-    .nav-logo img {
-      height: 60px;
-    }
-    
-    .nav-links {
-      padding: 0.6rem 1.5rem;
-    }
-    
-    .nav-links a {
-      font-size: 0.9rem;
-    }
+  .container {
+      padding: 0 1rem;
   }
+}
+
+@media (max-width: 480px) {
+  .nav-logo img {
+      height: 60px;
+  }
+  
+  .nav-links {
+      padding: 0.6rem 1.5rem;
+  }
+  
+  .nav-links a {
+      font-size: 0.9rem;
+  }
+}
