@@ -79,6 +79,7 @@
     display: flex;
     gap: 1.5rem;
     margin-bottom: 2rem;
+    margin-left: -0.5rem;
 }
 
 .cta-button {
@@ -190,6 +191,7 @@
 }
 
 .card h3 {
+    font: var(--body-font);
     font-size: 0.9rem;
     color: var(--light-text);
     text-align: center;
@@ -252,7 +254,7 @@
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
+    width: 300px;
     height: 3px;
     background: var(--accent-color); /* Changed to accent color */
 }
