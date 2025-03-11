@@ -9,13 +9,22 @@
     <link rel="stylesheet" href="assets/css/base.css" />
     <link rel="stylesheet" href="assets/css/index.css" />
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <!-- Add Three.js Import Map -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.159.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.159.0/examples/jsm/"
+            }
+        }
+    </script>
 </head>
 <body>
     <!-- Fixed Navbar -->
     <header class="site-header">
         <nav class="navbar">
             <div class="nav-logo">
-                <img src="assets/images/nav_logo.jpg" alt="Mattrix Auto Corp Logo">
+                <canvas id="logo-canvas"></canvas>
             </div>
             <div class="hamburger">
                 <span></span>
@@ -90,7 +99,7 @@
                             </div>
                             <div class="card">
                                 <div class="card-content">
-                                    <img src="assets/images/categories/caliper_pin.png" alt="Caliper Pin Kit">
+                                    <img src="assets/images/categories/caliper_pin_kit.png" alt="Caliper Pin Kit">
                                     <h3>Caliper Pin Kit</h3>
                                 </div>
                             </div>
@@ -230,7 +239,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script type = "module" src="assets/js/main.js"></script>
 </body>
 </html>

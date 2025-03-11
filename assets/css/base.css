@@ -86,18 +86,13 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 2px 20px var(--glass-shadow);
 }
 
-.nav-logo {
-  order: 1;
-  margin-right: auto;
-}
-
-.nav-logo img {
+.nav-logo canvas {
   height: 80px;
-  width: auto;
+  width: 280px;
   transition: transform var(--transition-normal);
 }
 
-.nav-logo img:hover {
+.nav-logo canvas:hover {
   transform: scale(1.05);
 }
 
