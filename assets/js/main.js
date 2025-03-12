@@ -1,17 +1,18 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { RectAreaLightHelper } from 'three/addons/helpers/RectAreaLightHelper.js';
 
 function initLogo() {
     const canvas = document.querySelector('#logo-canvas');
-    canvas.width = 280;
+    canvas.width = 300;
     canvas.height = 80;
 
     const scene = new THREE.Scene();
     
-    const camera = new THREE.PerspectiveCamera(28, canvas.width / canvas.height, 0.1, 1000);
-    camera.position.z = 1.5;
-    camera.position.y = 0.2;
-    camera.position.x = 0.1;
+    const camera = new THREE.PerspectiveCamera(24, canvas.width / canvas.height, 0.1, 1000);
+    camera.position.z = 3;
+    camera.position.y = 0.1;
+    camera.position.x = 0.15;
     camera.lookAt(0, 0, 0);
 
     const renderer = new THREE.WebGLRenderer({
@@ -26,35 +27,39 @@ function initLogo() {
     renderer.setClearColor(0x000000, 0);
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.5;
+
+    // Generate environment map
+    const pmremGenerator = new THREE.PMREMGenerator(renderer);
+    scene.environment = pmremGenerator.fromScene(new THREE.Scene()).texture;
 
     // Clear any existing lights
     scene.remove(...scene.children.filter(child => child.isLight));
 
-    // Stronger ambient light for base uniform illumination
+    // Base ambient light
     const ambientLight = new THREE.AmbientLight(0xffffff, 2.0);
     scene.add(ambientLight);
 
     // Main front light
-    const frontLight = new THREE.DirectionalLight(0xffffff, 2.5);
-    frontLight.position.set(0, 0, 3);
-    scene.add(frontLight);
+    const rectLight = new THREE.RectAreaLight(0xffffff, 3.0, 15, 15);
+    rectLight.position.set(0, 0, 8);
+    rectLight.lookAt(0, 0, 0);
+    scene.add(rectLight);
 
-    // Balanced side lights for uniform coverage
-    const leftLight = new THREE.DirectionalLight(0xffffff, 1.5);
-    leftLight.position.set(-2, 0, 2);
-    scene.add(leftLight);
-
-    const rightLight = new THREE.DirectionalLight(0xffffff, 1.5);
-    rightLight.position.set(2, 0, 2);
+    // Dramatic side lighting
+    const rightLight = new THREE.SpotLight(0xffffff, 2.0);
+    rightLight.position.set(3, 2, 4);
+    rightLight.angle = Math.PI / 4;
+    rightLight.penumbra = 0.5;
     scene.add(rightLight);
 
-    // Soft top light
-    const topLight = new THREE.DirectionalLight(0xffffff, 1.0);
-    topLight.position.set(0, 2, 1);
-    scene.add(topLight);
+    const leftLight = new THREE.SpotLight(0xffffff, 1.5);
+    leftLight.position.set(-3, -1, 4);
+    leftLight.angle = Math.PI / 4;
+    leftLight.penumbra = 0.5;
+    scene.add(leftLight);
 
     const loader = new GLTFLoader();
     loader.load(
@@ -64,15 +69,19 @@ function initLogo() {
             
             model.traverse((node) => {
                 if (node.isMesh) {
-                    const newMaterial = new THREE.MeshStandardMaterial({
+                    const newMaterial = new THREE.MeshPhysicalMaterial({
                         color: node.material.color || 0xffffff,
                         transparent: true,
                         opacity: 1.0,
-                        metalness: 0.25,
-                        roughness: 0.15,
-                        envMapIntensity: 2.0,
+                        metalness: 0.7,
+                        roughness: 0.2,
+                        envMapIntensity: 1.5,
+                        clearcoat: 0.5,
+                        clearcoatRoughness: 0.2,
+                        reflectivity: 1.0,
+                        ior: 1.5,
                         emissive: node.material.color || 0xffffff,
-                        emissiveIntensity: 0.25
+                        emissiveIntensity: 0.2
                     });
                     node.castShadow = true;
                     node.receiveShadow = true;
@@ -84,9 +93,13 @@ function initLogo() {
             const center = box.getCenter(new THREE.Vector3());
             const size = box.getSize(new THREE.Vector3());
             
-            const scale = 3 / size.x;
+            const scale = 5 / size.x;
             model.scale.set(scale, scale, scale);
-            model.position.set(-center.x * scale, -center.y * scale, 0);
+            model.position.set(
+                -center.x * scale,
+                -center.y * scale - 0.1,
+                0
+            );
 
             scene.add(model);
             
