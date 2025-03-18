@@ -86,7 +86,22 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 2px 20px var(--glass-shadow);
 }
 
-.nav-logo canvas {
+.nav-logo {
+  order: 1;
+  margin-right: auto;
+}
+
+.nav-logo img {
+  height: 80px;
+  width: auto;
+  transition: transform var(--transition-normal);
+}
+
+.nav-logo img:hover {
+  transform: scale(1.05);
+}
+
+/* .nav-logo canvas {
   height: 80px;
   width: 300px;
   transition: transform var(--transition-normal);
@@ -94,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-logo canvas:hover {
   transform: scale(1.05);
-}
+} */
 
 .nav-links {
   order: 2;

@@ -120,13 +120,6 @@
     box-shadow: 0 5px 15px rgba(228, 42, 36, 0.3); /* Changed to accent color shadow */
 }
 
-/* Enhanced focus states */
-.btn:focus,
-.option:focus-within {
-    outline: 3px solid rgba(228, 42, 36, 0.5); /* Changed to accent color with opacity */
-    outline-offset: 2px;
-}
-
 /* Meet Us Section */
 .meet-us {
     margin: 3rem 0;
@@ -188,6 +181,103 @@
     font-size: 1rem;
 }
 
+/* Tabs Styling */
+.tabs-container {
+    margin: 1rem 0;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tab-btn {
+    padding: 0.7rem 1.5rem;
+    background: var(--light-text);
+    color: var(--text-color);
+    border: 1px solid var(--medium-gray);
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all var(--transition-normal);
+}
+
+.tab-btn.active {
+    background: var(--primary-color);
+    color: var(--light-text);
+    border-color: var(--primary-color);
+}
+
+.tab-btn:hover:not(.active) {
+    background: rgba(46, 45, 136, 0.1);
+}
+
+/* Segmented Tabs Styling (like the second image) */
+.segmented-tabs {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 500px;
+    margin: 1.5rem auto;
+    background: #f5f5f5;
+}
+
+.segmented-tabs .tab-btn {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    background: transparent;
+    color: var(--text-color);
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    position: relative;
+    transition: all var(--transition-normal);
+}
+
+.segmented-tabs .tab-btn:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background-color: #e0e0e0;
+}
+
+.segmented-tabs .tab-btn.active {
+    background: #1a237e; /* Dark blue color for active tab */
+    color: white;
+    font-weight: 500;
+}
+
+.segmented-tabs .tab-btn:hover:not(.active) {
+    background: #e8eaf6; /* Light blue hover for inactive tabs */
+}
+
+/* Adjustments for the "Visit Our Office" tabs */
+.location-tabs .segmented-tabs {
+    max-width: 600px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Adjustments for the tab content */
+.location-tabs .location-details {
+    margin-top: 0;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -204,7 +294,8 @@
 @media (prefers-reduced-motion: reduce) {
     .option,
     .btn,
-    .contact-section {
+    .contact-section,
+    .tab-content.active {
         animation: none;
         transition: none;
     }
@@ -313,6 +404,20 @@
         padding: 0.9rem;
     }
     
+    .tabs {
+        gap: 0.4rem;
+    }
+    
+    .tab-btn {
+        padding: 0.6rem 1.3rem;
+        font-size: 0.95rem;
+    }
+    
+    .segmented-tabs .tab-btn {
+        padding: 0.7rem 0.8rem;
+        font-size: 0.95rem;
+    }
+    
     /* For smaller tablets (601px-900px) */
     @media screen and (max-width: 900px) {
         .contact-section {
@@ -343,6 +448,16 @@
         
         .map-container iframe {
             height: 350px;
+        }
+        
+        .tab-btn {
+            padding: 0.5rem 1.2rem;
+            font-size: 0.9rem;
+        }
+        
+        .segmented-tabs .tab-btn {
+            padding: 0.6rem 0.6rem;
+            font-size: 0.9rem;
         }
     }
 }
@@ -439,6 +554,32 @@
     .response-time p {
         font-size: 0.9rem;
     }
+    
+    .tabs {
+        gap: 0.3rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        border-radius: 20px;
+    }
+    
+    .segmented-tabs {
+        max-width: 100%;
+        margin: 1rem auto;
+    }
+    
+    .segmented-tabs .tab-btn {
+        padding: 0.6rem 0.5rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Responsive adjustments for segmented tabs */
+    .segmented-tabs {
+        flex-direction: row;
+    }
 }
 
 /* Extra small devices */
@@ -488,13 +629,30 @@
     .response-time p {
         font-size: 0.85rem;
     }
+    
+    .segmented-tabs {
+        flex-direction: column;
+    }
+    
+    .segmented-tabs .tab-btn:not(:last-child)::after {
+        display: none;
+    }
+    
+    .segmented-tabs .tab-btn:not(:last-child) {
+        border-bottom: 1px solid #e0e0e0;
+    }
 }
 
 /* Print styles */
 @media print {
     .btn,
-    .navbar {
+    .navbar,
+    .tabs {
         display: none;
+    }
+    
+    .tab-content {
+        display: block !important;
     }
 
     .location-details,

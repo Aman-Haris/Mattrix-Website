@@ -47,31 +47,102 @@
           <div class="option">
             <h2>Call Us</h2>
             <p>Speak directly with our team</p>
-            <a href="tel:+919964992828" class="btn" aria-label="Call our support team">
-              Call: +91 99649 92828
-            </a>
+            <div class="tabs-container call-tabs">
+              <div class="tabs segmented-tabs">
+                <button class="tab-btn active" data-tab="bangalore">Bangalore</button>
+                <button class="tab-btn" data-tab="shivamogga">Shivamogga</button>
+                <button class="tab-btn" data-tab="aluva">Aluva</button>
+              </div>
+              <div class="tab-content active" id="bangalore-call">
+                <a href="tel:+919964992828" class="btn" aria-label="Call our Bangalore support team">
+                  Call: +91 99649 92828
+                </a>
+              </div>
+              <div class="tab-content" id="shivamogga-call">
+                <a href="tel:+919448255899" class="btn" aria-label="Call our Shivamogga support team">
+                  Call: +91 94482 55899
+                </a>
+              </div>
+              <div class="tab-content" id="aluva-call">
+                <a href="tel:+919964992828" class="btn" aria-label="Call our Aluva support team">
+                  Call: +91 99649 92828
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="option meet-us">
           <h2>Visit Our Office</h2>
-          <address class="location-details">
-            Mattrix Auto Corp<br>
-            116-118, 5th Cross Rd, Kalasipalyam New Extension, Kalasipalya, Bengaluru, Karnataka 560002<br>
-            Business Hours: Mon-Sat 9:00 AM - 6:00 PM
-          </address>
-          <div class="map-container">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1996272417114!2d77.57885807465063!3d12.95907428735516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae155637b1fc67%3A0x3b7b9e856f276c2!2sMATTRIX%20AUTO%20CORP!5e0!3m2!1sen!2sin!4v1739803823561!5m2!1sen!2sin" 
-              width="600" 
-              height="450" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Mattrix Auto Corp Location Map"
-              aria-label="Google Maps showing our location">
-            </iframe>
+          <div class="tabs-container location-tabs">
+            <div class="tabs segmented-tabs">
+              <button class="tab-btn active" data-tab="bangalore">Bangalore</button>
+              <button class="tab-btn" data-tab="shivamogga">Shivamogga</button>
+              <button class="tab-btn" data-tab="aluva">Aluva</button>
+            </div>
+            
+            <div class="tab-content active" id="bangalore-location">
+              <address class="location-details">
+                Mattrix Auto Corp<br>
+                116-118, 5th Cross Rd, Kalasipalyam New Extension, Kalasipalya, Bengaluru, Karnataka 560002<br>
+                Business Hours: Mon-Sat 9:00 AM - 6:00 PM
+              </address>
+              <div class="map-container">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1996272417114!2d77.57885807465063!3d12.95907428735516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae155637b1fc67%3A0x3b7b9e856f276c2!2sMATTRIX%20AUTO%20CORP!5e0!3m2!1sen!2sin!4v1739803823561!5m2!1sen!2sin" 
+                  width="600" 
+                  height="450" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Mattrix Auto Corp Bangalore Location Map"
+                  aria-label="Google Maps showing our Bangalore location">
+                </iframe>
+              </div>
+            </div>
+            
+            <div class="tab-content" id="shivamogga-location">
+              <address class="location-details">
+                Mattrix Auto Corp - Shivamogga<br>
+                1st Floor, Jayadeva Complex, LLR Road, Shivamogga 577201<br>
+                Business Hours: Mon-Sat 9:00 AM - 6:00 PM
+              </address>
+              <div class="map-container">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3872.4327042115106!2d75.56815317466977!3d13.932822186478166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbba9c3f1e30de3%3A0xef7014e00c291788!2sMattrix%20Auto%20Corp%20(%20Shivamogga%20Branch)!5e0!3m2!1sen!2sin!4v1742313714814!5m2!1sen!2sin"  
+                  width="600" 
+                  height="450" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Mattrix Auto Corp Shivamogga Location Map"
+                  aria-label="Google Maps showing our Shivamogga location">
+                </iframe>
+              </div>
+            </div>
+            
+            <div class="tab-content" id="aluva-location">
+              <address class="location-details">
+                Mattrix Auto Corp<br>
+                No.7/235, Aickarakudy Arcade, Snehanagar, Alangad P O, Aluva 685311, Ernakulam Dist<br>
+                Business Hours: Mon-Sat 9:00 AM - 6:00 PM
+              </address>
+              <div class="map-container">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15714.637482048!2d76.3019532!3d10.1159291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080b4d6bffffff%3A0x3e3c1e8b0d7fae3c!2sAluva%2C%20Kerala%20683101!5e0!3m2!1sen!2sin!4v1739803823561!5m2!1sen!2sin" 
+                  width="600" 
+                  height="450" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Mattrix Auto Corp Aluva Location Map"
+                  aria-label="Google Maps showing our Aluva location">
+                </iframe>
+              </div>
+            </div>
           </div>
         </div>
 
