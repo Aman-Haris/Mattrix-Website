@@ -22,8 +22,8 @@
     bottom: 0;
     background: radial-gradient(
         circle at center,
-        rgba(46, 45, 136, 0.2) 0%, /* Changed to primary color with opacity */
-        rgba(0, 0, 0, 0.3) 100%
+        rgba(38, 39, 79, 1) 0%
+        rgba(38, 39, 79, 1) 100%,
     );
 }
 
@@ -287,7 +287,6 @@
 .brand-item img {
     max-width: 150px;
     height: auto;
-    filter: grayscale(100%);
     transition: all var(--transition-normal);
 }
 
