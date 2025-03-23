@@ -1,4 +1,7 @@
 /* About Section Main Styles */
+body{
+    background: linear-gradient(to top, #ce362e 0%, #26274f 100%)}
+    
 .about-section {
     padding: 120px 2rem 4rem;
     max-width: 1200px;
@@ -23,7 +26,7 @@
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 500px;
+    width: min(500px, 80%);
     height: 3px;
     background: var(--accent-color);
     border-radius: 2px;
@@ -39,20 +42,22 @@
 .test {
     font-size: 2.4rem;
     color: var(--text-color);
-    margin: 2.5rem 0 1.5rem;
+    margin: 2rem 0 1rem;
     position: relative;
+    padding-left: 2rem; /* Add left padding to move it right */
+    text-align: left; /* Ensure left alignment */
 }
 
 .test::after {
     content: '';
     position: absolute;
     bottom: -10px;
-    right: 565px;
-    transform: translateX(-50%);
-    width: 380px;
+    left: 2rem; /* Change from right: 565px to left: 2rem */
+    width: min(380px, 80%);
     height: 3px;
     background: var(--accent-color);
     border-radius: 2px;
+    transform: none; /* Remove the translateX that was shifting it */
 }
 
 .about-section h3 {
@@ -61,13 +66,13 @@
     margin: 1.5rem 0 1rem;
 }
 
-/* Main Content Paragraphs */
+/* Main Content Paragraphs - Increased font size */
 .about-section p {
-    font-size: 1.1rem;
+    font-size: 1.2rem; /* Increased from 1.1rem */
     line-height: 1.8;
     color: var(--text-color);
     margin-bottom: 1.5rem;
-    max-width: 900px;
+    max-width: 1000px; /* Increased from 900px */
     margin-left: auto;
     margin-right: auto;
 }
@@ -79,11 +84,12 @@
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     margin-bottom: 2rem;
+    max-width: 1000px; /* Increased from 900px */
 }
 
 /* Team Section */
 .team-section-wrapper {
-    margin-top: 4rem;
+    margin-top: 0.5rem;
     padding: 2rem 0;
     position: relative;
     background-color: #f2f2f8;
@@ -96,7 +102,7 @@
 }
 
 .team-section {
-    margin-top: 3rem;
+    margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 
@@ -210,16 +216,19 @@
     margin-top: 1rem;
 }
 
-/* Mission & Vision Sections */
+/* Mission & Vision Sections - Wider and less tall */
 .mission-section,
 .vision-section {
     position: relative;
-    padding: 3rem;
+    padding: 1.8rem 2.2rem; /* Reduced vertical padding */
     border-radius: 15px;
-    margin: 3rem 0;
+    margin: 2rem 0; /* Reduced margin */
     overflow: hidden;
     box-shadow: 0 15px 40px rgba(46, 45, 136, 0.06);
     border: 1px solid rgba(46, 45, 136, 0.05);
+    max-width: 1000px; /* Increased from 850px */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .mission-section {
@@ -232,11 +241,20 @@
     border-left: 5px solid var(--primary-color);
 }
 
+/* Adjust the heading spacing in mission/vision sections */
 .mission-section h2,
 .vision-section h2 {
     display: inline-block;
-    padding-bottom: 10px;
+    padding-bottom: 8px; /* Reduced from 10px */
     position: relative;
+    margin-bottom: 0.8rem; /* Added to reduce space after heading */
+    margin-top: 0; /* Remove top margin */
+}
+
+/* Adjust paragraph spacing in mission/vision sections */
+.mission-section p,
+.vision-section p {
+    margin-bottom: 0.8rem; /* Reduced from 1.5rem */
 }
 
 .mission-section h2::after{
@@ -244,7 +262,7 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 210px;
+    width: min(210px, 80%);
     height: 3px;
     border-radius: 1.5px;
 }
@@ -254,7 +272,7 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 180px;
+    width: min(180px, 80%);
     height: 3px;
     border-radius: 1.5px;
 }
@@ -377,7 +395,7 @@
     }
     
     .about-section p {
-        font-size: 1.1rem;
+        font-size: 1.25rem; /* Updated */
     }
     
     .team-member img {
@@ -415,7 +433,7 @@
     }
     
     .about-section p {
-        font-size: 1rem;
+        font-size: 1.15rem; /* Updated from 1rem */
         line-height: 1.7;
         margin-bottom: 1.2rem;
     }
@@ -462,8 +480,8 @@
     
     .mission-section,
     .vision-section {
-        padding: 2.5rem;
-        margin: 2.5rem 0;
+        padding: 1.5rem 2rem; /* Adjusted padding */
+        margin: 1.8rem 0; /* Reduced margin */
     }
     
     .cta-section {
@@ -511,8 +529,8 @@
         
         .mission-section,
         .vision-section {
-            padding: 2rem;
-            margin: 2rem 0;
+            padding: 1.5rem 2rem;
+            margin: 1.8rem 0;
         }
         
         .cta-section {
@@ -554,7 +572,7 @@
     }
     
     .about-section p {
-        font-size: 0.95rem;
+        font-size: 1.05rem; /* Updated from 0.95rem */
         line-height: 1.6;
         margin-bottom: 1rem;
     }
@@ -613,9 +631,8 @@
     
     .mission-section,
     .vision-section {
-        padding: 1.5rem;
-        margin: 2rem 0;
-        border-radius: 10px;
+        padding: 1.2rem 1.5rem; /* Adjusted padding */
+        margin: 1.2rem 0; /* Reduced margin */
     }
     
     .cta-section {
@@ -669,7 +686,7 @@
     }
     
     .about-section p {
-        font-size: 0.9rem;
+        font-size: 1rem; /* Updated from 0.9rem */
     }
     
     .team-member {

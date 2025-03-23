@@ -1,4 +1,8 @@
 /* Contact Section Main Styles */
+body{
+    background: linear-gradient(to top, #ce362e 0%, #26274f 100%)
+}
+
 .contact-container {
     display: grid;
     gap: 3rem;
@@ -11,6 +15,7 @@
     margin: 0 auto;
     min-height: calc(100vh - 60px); /* Account for footer */
     animation: fadeIn 0.8s ease-out;
+    background: whitesmoke;
 }
 
 /* Section Headers */
@@ -28,7 +33,7 @@
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 450px;
+    width: min(450px, 80%);
     height: 3px;
     background: var(--accent-color); /* Changed to accent color (red) */
 }
@@ -350,7 +355,7 @@
     }
     
     .contact-section h1::after {
-        width: 50px;
+        width: min(50px, 20%);
         bottom: -8px;
     }
     
@@ -475,7 +480,7 @@
     }
     
     .contact-section h1::after {
-        width: 45px;
+        width: min(45px, 20%);
         height: 2px;
         bottom: -7px;
     }
@@ -630,6 +635,7 @@
         font-size: 0.85rem;
     }
     
+    /* Improved tab behavior for very small screens */
     .segmented-tabs {
         flex-direction: column;
     }
@@ -640,6 +646,16 @@
     
     .segmented-tabs .tab-btn:not(:last-child) {
         border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .tabs {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        margin-bottom: 0.3rem;
     }
 }
 
