@@ -71,8 +71,9 @@ MATTRIX WEBSITE/
 For collaboration or inquiries about the website:
 
 **Aman Haris**
-📧 [amanharis@gmail.com](mailto:amanharis@gmail.com)
-🌐 [LinkedIn](https://linkedin.com/in/amanharis)
+
+* 📧 [amanharisofficial@protonmail.com](mailto:amanharisofficial@protonmail.com)
+* 🌐 [LinkedIn](https://linkedin.com/in/amanharis)
 
 ---
 
